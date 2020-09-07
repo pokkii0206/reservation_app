@@ -10,11 +10,37 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logoImage: UIImageView!
+   
+    @IBOutlet weak var mailT: UITextField!
+    
+    @IBOutlet weak var passT: UITextField!
+    @IBOutlet weak var facebookB: UIButton!
+    @IBOutlet weak var googleB: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        setup()
+       
     }
 
+    func setup() {
+        logoImage.image = UIImage(named: "logo")
+        mailT.layer.cornerRadius = 17
+        passT.layer.cornerRadius = 17
+        
+        let facebook_icon = UIImage(named: "facebook")
+        let google_icon = UIImage(named: "google")
+        facebookB.setImage(facebook_icon, for: .normal)
+        facebookB.imageView?.contentMode = .scaleAspectFit
+        facebookB.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        googleB.setImage(google_icon, for: .normal)
+        googleB.imageView?.contentMode = .scaleAspectFit
+        googleB.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        
+        
+    }
 
 }
 
